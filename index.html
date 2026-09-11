@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CHOCONANA — kripik pisang renyah dengan lapisan cokelat premium.">
+  <meta name="theme-color" content="#4b2b19">
+  <title>CHOCONANA | Snack sehat yang enak</title>
+
+  <style>
+    :root{--brown:#4b2b19;--brown2:#70452b;--cream:#fff8ee;--cream2:#f3e4d2;--pink:#e89a9a;--pink2:#f8dddd;--ink:#34241b;--white:#fff;--line:#4b2b1920;--shadow:0 18px 55px #4b2b1920;--radius:28px;--max:1160px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.35;background-image:radial-gradient(#4b2b1912 .7px,transparent .7px);background-size:9px 9px}
+    a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{width:min(var(--max),92%);margin:auto}
+
+    .navbar{position:sticky;top:0;z-index:100;background:#fff8eedf;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+    .nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:1.25rem;font-weight:1000;letter-spacing:2px;color:var(--brown)}.logo i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--pink);margin-right:8px}
+    .nav-links{display:flex;gap:27px;font-size:.92rem;font-weight:850}.nav-links a{transition:.2s}.nav-links a:hover{color:var(--pink)}
+    .nav-cta{padding:10px 16px;border-radius:999px;background:var(--brown);color:#fff;font-weight:900;font-size:.85rem;transition:.2s}.nav-cta:hover{transform:translateY(-2px)}
+
+    .hero{padding:76px 0 70px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:7px;background:var(--pink2);color:var(--brown);padding:8px 14px;border-radius:999px;font-weight:900;font-size:.76rem;letter-spacing:.8px;margin-bottom:18px;text-transform:uppercase}.badge:before{content:"♥";color:var(--pink)}
+    .hero h1{font-size:clamp(3.5rem,8vw,7rem);line-height:.86;letter-spacing:-5px;color:var(--brown);margin-bottom:23px;font-weight:1000}.hero h1 span{color:var(--pink)}
+    .hero p{font-size:1.08rem;max-width:600px;color:#684f3c;margin-bottom:24px}.hero-note{margin-top:16px;color:#8a7565;font-size:.82rem}
+    .buttons{display:flex;flex-wrap:wrap;gap:12px}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 21px;border-radius:999px;font-weight:950;border:2px solid var(--brown);transition:.22s}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px #4b2b1920}.primary{background:var(--brown);color:#fff}.secondary{background:transparent;color:var(--brown)}
+    .poster-wrap{background:#fff;padding:12px;border-radius:34px;box-shadow:var(--shadow);transform:rotate(1deg);position:relative}.poster-wrap:after{content:"";position:absolute;right:-13px;bottom:-13px;width:90px;height:90px;background:var(--pink2);border-radius:50%;z-index:-1}.poster-wrap img{width:100%;height:auto;border-radius:25px}
+
+    section{padding:82px 0}.section-title{text-align:center;max-width:750px;margin:0 auto 40px}.section-title .small{color:var(--pink);font-weight:1000;letter-spacing:2px;text-transform:uppercase;font-size:.76rem}.section-title h2{color:var(--brown);font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.05;margin:9px 0 12px;letter-spacing:-1.2px}.section-title p{color:#765f4d}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#ffffffc9;border:1px solid var(--line);padding:30px;border-radius:var(--radius);box-shadow:0 12px 35px #4b2b1910;transition:.22s}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.icon{width:54px;height:54px;border-radius:17px;background:var(--cream2);display:grid;place-items:center;font-size:1.45rem;margin-bottom:16px}.card h3{color:var(--brown);margin-bottom:7px}.card p{color:#735d4c;font-size:.94rem}
+
+    .products{background:var(--cream2)}.catalog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.product{background:#fff;border-radius:30px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #4b2b190d}.product-content{padding:30px}.product h3{color:var(--brown);font-size:1.35rem;margin-bottom:7px}.product p{color:#765f4d;margin-bottom:18px}.product-meta{display:flex;align-items:center;justify-content:space-between;gap:14px}.price{background:var(--brown);color:#fff;border-radius:999px;padding:8px 13px;font-weight:1000;white-space:nowrap}.product-photo{aspect-ratio:4/3;background:var(--cream);display:grid;place-items:center;overflow:hidden}.product-photo img{width:100%;height:100%;object-fit:contain;padding:20px}.product-photo .no-photo{font-size:2.5rem}
+    .coming{min-height:330px;border:2px dashed #4b2b1930;border-radius:30px;display:grid;place-items:center;text-align:center;padding:35px;color:#765f4d;background:#ffffff70}.coming strong{display:block;color:var(--brown);font-size:1.15rem;margin:8px 0 4px}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery-item{aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:var(--cream2);border:1px dashed #4b2b1930;display:grid;place-items:center}.gallery-item img{width:100%;height:100%;object-fit:cover}.gallery-empty{padding:25px;text-align:center;color:#765f4d}.gallery-empty b{display:block;color:var(--brown);font-size:1.05rem;margin-top:6px}
+
+    .order{padding:82px 0}.order-box{background:var(--brown);color:#fff;border-radius:35px;padding:52px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}.order-box:before,.order-box:after{content:"";position:absolute;border:1px solid #ffffff18;border-radius:50%;width:190px;height:190px}.order-box:before{left:-80px;top:-100px}.order-box:after{right:-75px;bottom:-105px}.order-box>*{position:relative;z-index:1}.order-box h2{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.05;margin-bottom:12px}.order-box p{max-width:650px;margin:0 auto;color:#eaded3}.wa-number{display:block;font-size:clamp(1.4rem,4vw,2.3rem);font-weight:1000;margin:22px 0}.order-box .primary{background:#fff;color:var(--brown);border-color:#fff}
+    .float-wa{position:fixed;right:20px;bottom:20px;z-index:200;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;font-size:1.55rem;box-shadow:0 12px 30px #0003;transition:.2s}.float-wa:hover{transform:scale(1.07)}
+    footer{background:#382216;color:#fff;padding:35px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer strong{letter-spacing:2px}.footer p{color:#d8c9bd;font-size:.88rem}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){.nav-links{display:none}.hero{padding-top:48px}.hero-grid{grid-template-columns:1fr;gap:38px}.poster-wrap{max-width:650px;margin:auto}.features,.catalog-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}section{padding:68px 0}.order-box{padding:40px 24px}}
+    @media(max-width:520px){.nav{min-height:64px}.nav-cta{font-size:.76rem;padding:9px 12px}.hero h1{font-size:4rem;letter-spacing:-3px}.hero p{font-size:1rem}.buttons{display:grid}.btn{width:100%}.product-meta{align-items:flex-start;flex-direction:column}.price{display:inline-block}.gallery-grid{grid-template-columns:1fr}.float-wa{right:15px;bottom:15px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.card,.float-wa{transition:none}}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav">
+    <a href="#home" class="logo"><i></i><span id="navLogo">CHOCONANA</span></a>
+    <div class="nav-links"><a href="#tentang">Tantang</a><a href="#produk">Produk</a><a href="#testimoni">Testimoni</a><a href="#galeri">Galeri</a></div>
+    <a class="nav-cta" id="navOrder" href="#" target="_blank" rel="noopener">Order via WA</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+  <div class="reveal">
+    <div class="badge" id="heroBadge">CEMILAN MANIS BIKIN HAPPY!</div>
+    <h1 id="heroTitle">CHOCONANA<span>🍌</span></h1>
+    <p id="heroDescription">Kripik pisang renyah yang dilapisi cokelat premium. Manisnya pas, bikin nagih, jadi cocok buat teman santai.</p>
+    <div class="buttons"><a class="btn primary" id="heroOrderButton" href="#" target="_blank" rel="noopener">💬 Pesan Sekarang</a><a class="btn secondary" href="#produk">Lihat Produk</a></div>
+    <div class="hero-note" id="heroNote">Open PO setiap Senin – Rabu • Selama persediaan masih ada</div>
+  </div>
+  <div class="poster-wrap reveal"><img id="posterImage" src="Choconana poles no logo.png" alt="Choconana poles no logo"></div>
+</div></section>
+
+<section id="tentang"><div class="container">
+  <div class="section-title reveal"><div class="small">Tentang produk</div><h2 id="aboutTitle">Manisnya pas, nagihnya serius.</h2><p id="aboutText">Keripik pisang yang dipotong tipis tipis dan dilumuri coklat premium yang berlimpah menjadikannya teman nyatai yang cocok.</p></div>
+  <div class="features">
+    <article class="card reveal"><div style="display:flex; gap:10px;">
+  <div class="icon">🍌</div>
+  <div class="icon">🍫</div>
+</div><h3 id="feature1Title">Penjelasan tentang Choconnana</h3><p id="feature1Text">Choconana adalah pisang yang di potong tipis-tipis dengan berbentuk bulat lalu digorang dengan api kecill agar bisa mendapatkan terkstur renyah itu, ditambah lelehan coklat premium yang berlimpah dimana dua combo tersebut menghasilkan makanan duniaswi-surgawi. </p></article>
+    <article class="card reveal"><div class="icon">🤝</div><h3 id="feature2Title">Cokelat Tebal</h3><p id="feature2Text">Dilapisi cokelat premium untuk rasa manis dan cokelat yang lebih terasa.</p></article>
+    <article class="card reveal"><div class="icon">📸</div><h3 id="feature3Title">Bikin Ketagihan</h3><p id="feature3Text">Cocok untuk ngemil sendiri atau dibagikan ke teman dan keluarga.</p><img id="productImage" src="coming soon emoji 1.png" alt="testimoni Denis"></article>
+  </div>
+</div></section>
+
+<section class="products" id="produk"><div class="container">
+  <div class="section-title reveal"><div class="small">Katalog</div><h2>Produk <span id="catalogBrand">Choconana</span></h2><p>Pilih Varian Choconana yang ingin kamu pesan.</p></div>
+  <div class="catalog-grid">
+    <article class="product reveal">
+      <div class="product-photo"><img id="productImage" src="foto produk 2 pro.png" alt="foto produk 1"></div>
+      <div class="product-content"><h3 id="productName">Rasa Cokelat</h3><p id="productDescription">Kripik pisang renyah dengan lapisan cokelat premium.</p><div class="product-meta"><span class="price" id="productPrice">5K /pcs</span><a class="btn primary" id="productOrder" href="#" target="_blank" rel="noopener">💬 Pesan Produk</a></div></div>
+    </article>
+	
+	 <article class="product reveal">
+      <div class="product-photo"><img id="productImage" src="coming soon emoji 1.png" alt="coming soon 1"></div>
+      <div class="product-content"><h3 id="productName">Coming soon</h3><p id="productDescription">Varian ini masih dalam pengembangan, mohon bersabar.</p><div class="product-meta"><span class="price" id="productPrice">. . . K /pcs</span><a class="btn primary" id="productOrder" href="#" target="_blank" rel="noopener">💬 Pesan Produk</a></div></div>
+    </article>
+	
+  </div>
+</div></section>
+
+<section id="testimoni"><div class="container">
+  <div class="section-title reveal"><div class="small">Testimoni pelanggan</div><h2 id="aboutTitle">Respon jujur pelanggan.</h2><p id="aboutText">Kami siap bertanggung jawab dan memperbaiki kesalahan kami.</p></div>
+  <div class="features">
+    <article class="card reveal"><img id="productImage" src="pp Denis 1.png" alt="pp Denis"><h3 id="feature3Title"></h3><p id="feature3Text"></p><img id="productImage" src="jawaban Denis.png" alt="jawaban Denis"></article>
+    <article class="card reveal"><img id="productImage" src="pp Ekkles.png" alt="pp Ekkles"><h3 id="feature3Title"></h3><p id="feature3Text"></p><img id="productImage" src="jawaban Ekkles.png" alt="jawaban Ekkle"></article>
+    <article class="card reveal"><img id="productImage" src="pp Ariya.png" alt="pp Ariya"><h3 id="feature3Title"></h3><p id="feature3Text"></p><img id="productImage" src="jawaban Ariya.png" alt="jawaban Ariya"></article>
+    <article class="card reveal"><img id="productImage" src="pp Indri.png" alt="pp Indri"><h3 id="feature3Title"></h3><p id="feature3Text"></p><img id="productImage" src="jawaban Indri.png" alt="jawaban Indri"></article>
+  </div>
+</div></section>
+
+<section id="galeri"><div class="container">
+  <div class="section-title reveal"><div class="small">Galeri</div><h2>Foto produk</h2></div>
+  <div class="gallery-grid" id="galleryGrid">
+<article class="product reveal">
+    <div class="product-photo"><img id="productImage" src="foto produk 3 pro.png" alt="kolase 3 foto produk"></div>
+  </article>  <article class="product reveal">
+    <div class="product-photo"><img id="productImage" src="foto produk 1 pro.png" alt="kolase 3 foto produk"></div>
+  </article>
+<article class="product reveal">
+    <div class="product-photo"><img id="productImage" src="foto produk 4 pro.png" alt="kolase 3 foto produk"></div>
+  </article>  </div>
+</div></section>
+
+<section class="order" id="pesan"><div class="container"><div class="order-box reveal">
+  <h2 id="orderTitle">Yuk, pesan sekarang!</h2><p id="orderText">Klik tombol di bawah. Website akan langsung membuka WhatsApp untuk melanjutkan pesanan.</p>
+  <span class="wa-number" id="waNumber">087748251412</span><a class="btn primary" id="waButton" href="#" target="_blank" rel="noopener">💬 Order via WhatsApp</a>
+</div></div></section>
+</main>
+
+<a class="float-wa" id="floatingWA" href="#" target="_blank" rel="noopener" aria-label="Order via WhatsApp">☎</a>
+<footer class="footer"><div class="container footer-inner"><strong id="footerBrand">CHOCONANA</strong><p id="footerText">Cemilan manis bikin happy! ❤️</p></div></footer>
+
+<script>
+/* ==========================================================
+   ✏️ BAGIAN YANG KAMU EDIT NANTI CUKUP DI SINI
+   ========================================================== */
+const DATA = {
+  brand: "CHOCONANA",
+  badge: "CEMILAN MANIS BIKIN HAPPY!",
+  heroDescription: "Kripik pisang renyah yang dilapisi cokelat premium. Manisnya pas, bikin nagih, jadi cocok buat teman santai.",
+  heroNote: "Open PO setiap Senin – Rabu • Siap restock ulang apabila barang habis.",
+
+  aboutTitle: "Apa itu CHOCONANA?.",
+  aboutText: "Kripik pisang renyah yang dipadukan dengan cokelat premium untuk camilan sederhana yang bikin happy.",
+
+  feature1Title: "Tentang Choconana:",
+  feature1Text: "Choconana adalah pisang yang di potong tipis-tipis dengan berbentuk bulat lalu digorang dengan api kecil agar bisa mendapatkan tekstur renyah itu, ditambah lelehan coklat premium yang berlimpah dimana dua combo tersebut menghasilkan makanan duniawi-surgawi. ",
+  feature2Title: "Tentang tim kita:",
+  feature2Text: "Kita adalah tim yang terdiri dari 8 anggota, diketuai oleh Almi dan staff nya Alvaro. kita melakukn ini karna memang kita yang memilih jalan dijalan ini dan ini memang sudah tugas kita.",
+  feature3Title: "Foto tim:",
+  feature3Text: "Nanti yah.",
+
+  productName: "Snack nyantai yang enak",
+  productDescription: "Kripik pisang renyah dengan lapisan cokelat premium.",
+  price: "5K",
+  priceUnit: "/pcs",
+
+  openPO: "Senin – Rabu",
+
+  // Angka saja. Contoh 087712345678 → 6287712345678
+  whatsapp: "6287748251412",
+  whatsappMessage: "Halo Choconana! Saya mau pesan Choconana. Apakah masih tersedia?",
+
+  orderTitle: "Yuk, pesan sekarang!",
+  orderText: "Klik tombol di bawah. Website akan langsung membuka WhatsApp untuk melanjutkan pesanan.",
+  footerText: "Cemilan manis bikin happy! ❤️"
+};
+
+/* ==========================================================
+   📸 GALERI — NANTI SAAT SUDAH PUNYA FOTO
+   ==========================================================
+   Cukup isi nama file fotonya. Contoh:
+   const GALLERY = ["foto1.jpg", "foto2.jpg", "foto3.jpg"];
+
+   File foto harus berada satu folder dengan index.html.
+   ========================================================== */
+const GALLERY = [];
+
+const $ = id => document.getElementById(id);
+
+$("navLogo").textContent = DATA.brand;
+$("heroBadge").textContent = DATA.badge;
+$("heroTitle").innerHTML = DATA.brand + "<span>🍌</span>";
+$("heroDescription").textContent = DATA.heroDescription;
+$("heroNote").textContent = DATA.heroNote;
+$("aboutTitle").textContent = DATA.aboutTitle;
+$("aboutText").textContent = DATA.aboutText;
+$("feature1Title").textContent = DATA.feature1Title;
+$("feature1Text").textContent = DATA.feature1Text;
+$("feature2Title").textContent = DATA.feature2Title;
+$("feature2Text").textContent = DATA.feature2Text;
+$("feature3Title").textContent = DATA.feature3Title;
+$("feature3Text").textContent = DATA.feature3Text;
+$("catalogBrand").textContent = DATA.brand;
+$("productName").textContent = DATA.productName;
+$("productDescription").textContent = DATA.productDescription;
+$("productPrice").textContent = DATA.price + " " + DATA.priceUnit;
+$("orderTitle").textContent = DATA.orderTitle;
+$("orderText").textContent = DATA.orderText;
+$("footerBrand").textContent = DATA.brand;
+$("footerText").textContent = DATA.footerText;
+
+const displayNumber = DATA.whatsapp.startsWith("62") ? "0" + DATA.whatsapp.slice(2) : DATA.whatsapp;
+$("waNumber").textContent = displayNumber;
+
+const waURL = "https://wa.me/" + DATA.whatsapp + "?text=" + encodeURIComponent(DATA.whatsappMessage);
+["navOrder","heroOrderButton","productOrder","waButton","floatingWA"].forEach(id => $(id).href = waURL);
+document.title = DATA.brand + " | " + DATA.productName;
+
+// Jika GALLERY sudah diisi, placeholder otomatis diganti foto.
+if (GALLERY.length) {
+  const grid = $("galleryGrid");
+  grid.innerHTML = "";
+  GALLERY.forEach((file, index) => {
+    const item = document.createElement("div");
+    item.className = "gallery-item";
+    const img = document.createElement("img");
+    img.src = file;
+    img.alt = DATA.brand + " — foto " + (index + 1);
+    item.appendChild(img);
+    grid.appendChild(item);
+  });
+}
+
+// Animasi halus.
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){ entry.target.classList.add("show"); observer.unobserve(entry.target); }
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
